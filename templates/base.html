@@ -24,7 +24,7 @@
                     <a class="nav-link" id="navlink2" href={% block navlink2 %}/register{% endblock %}>{% block navlinktext2 %}Register{% endblock %}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" id="navlink3" href={% block navlink3 %} {%if "user_id" in session%}/logout{% else %}/login{% endif %}{% endblock %}>{% block navlinktext3 %}{%if "user_id" in session%}Logout{% else %}Login{% endif %}{% endblock %}</a>
+                    <a class="nav-link" id={%if "user_id" in session%}navlink3log{% else %}navlink3{% endif %} href={% block navlink3 %} {%if "user_id" in session%}#{% else %}/login{% endif %}{% endblock %}>{% block navlinktext3 %}{%if "user_id" in session%}Logout{% else %}Login{% endif %}{% endblock %}</a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

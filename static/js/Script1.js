@@ -11,6 +11,7 @@ $('.fa-circle-xmark').click(delete_user)
 $('.fa-circle-xmark-feedback').click(delete_feedback)
 $('.fa-circle-plus').click(add_feedback)
 $('.feedback').click(see_feedback)
+$('#navlink3log').click(logout)
 
 //async function deleteCupcake() {
 //    const id = $(this).attr('id')
@@ -164,6 +165,14 @@ function delete_user() {
     const id = $(this).attr('id')
     window.location.href = `/users/${id}/delete`;
     return false;
+}
+
+async function logout() {
+    const id = $(this).attr('id')
+    
+    await axios.post(`/logout`)
+    window.location.href = `/`;
+   
 }
 
 function delete_feedback() {

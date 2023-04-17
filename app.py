@@ -75,7 +75,7 @@ def show_secret(username):
         return redirect("/")
 
 
-@app.route('/logout')
+@app.route('/logout', methods=["POST"])
 def logout():
     session.pop("user_id")
     if "username" in session:
