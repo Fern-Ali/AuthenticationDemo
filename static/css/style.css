@@ -1,0 +1,114 @@
+﻿body {
+    background-color: rgba(180, 159, 97, 0.33);
+    background-repeat: no-repeat;
+}
+
+.icon {
+    border: 3px solid black;
+    padding: 4px;
+    margin: 5px;
+}
+
+.round {
+    border-radius: 50px;
+    /*background-color: rgba(157, 79, 229, 0.33);*/
+}
+
+.colorme {
+    /*background-color: rgba(39, 82, 237, 0.33);*/
+    /*background-color: rgba(243, 101, 219, 0.28);*/
+    background-color: white;
+    border-radius: 5px;
+    /*border: 3px solid tan;*/
+    border: 4px solid rgba(243, 101, 219, 0.28);
+}
+
+image {
+    /*border-radius: 5px;*/
+}
+
+.test {
+    /*background-color: rgba(243, 101, 219, 0.28)*/
+    background-color: rgba(243, 101, 219, 0.28);
+}
+
+.hidden {
+    visibility: hidden;
+}
+
+.messages p {
+    padding: 1rem;
+    border-radius: 1rem;
+    margin-bottom: 15px;
+}
+
+.messages .success {
+    background-color: rgba(0,255,0,0.4);
+    color: white;
+    /*border: 2.5px solid antiquewhite;*/
+}
+
+.messages .error {
+    background-color: rgba(255,0,0,0.4);
+    color: white;
+}
+
+.display {
+    text-align: center;
+}
+
+.notification {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: max-content;
+    padding: 13px 10px;
+    border-radius: 4px;
+    background-color: #141619;
+    color: #f6f5f9;
+    box-shadow: 0 1px 10px rgba(0,0,0,0.1);
+    transform: translateY(30px);
+    opacity: 0;
+    visibility: hidden;
+    animation: fade-in 4s linear forwards;
+}
+
+.notification_progress {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: calc(100% - 10px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-image: linear-gradient( to right, #539bdb, #3250bf);
+    border-radius: inherit;
+    animation: load 3s 0.25s linear forwards;
+}
+
+.welcome_holder {
+    background-color: rgba(243, 101, 219, 0.28);
+}
+
+
+@keyframes fade-in {
+
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+@keyframes load {
+    to {
+        transform: scaleX(1);
+    }
+}
+}

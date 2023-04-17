@@ -1,0 +1,62 @@
+﻿{% extends 'base.html' %}
+
+{% block add_card%}
+
+
+{% for cupcake in cupcakes %}
+
+
+<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 card-group  mt-4">
+    <div class="card test round " style="border: 3px solid rgba(98, 176, 184, 0.5); <!--background-color: rgba(239, 226, 192, 0.5)--> ">
+        <img src={{cupcake.image}} class="card-img-top shadow round p-2" style="border: 4px solid rgba(243, 101, 219, 0.28); background-color: lightyellow; " /> <!--style="border: 3px solid tan; background-color: rgba(243, 106, 101, 0.28);"  alt="..."-->
+        <div class="card-body round">
+            <div class=" p-3 colorme shadow">
+                <h5 class="card-title text-center text-info"> {{cupcake.flavor}}  </h5>
+                <h6 class="text-success card-title text-center"> {% if cupcake %} ✔️ Available Now!{% endif %}</h6>
+
+
+
+                Our yummy {{cupcake.flavor}} is going to blow your mind! This {{cupcake.size}} cupcake is rated {{cupcake.rating}}!
+                
+
+                </p>
+            <h6 class="text-success card-title text-center "> {% if cupcake.rating %} <i class="fa-solid fa-cake-candles" style="color: #e029c8;"></i>  {{cupcake.rating}} stars! {% endif %}</h6>
+
+                <div class="row justify-content-center mt-2 ">
+
+                    <div id="icon_holder" class="col-6 test round">
+                        <div class="row justify-content-center">
+                            <i id="{{cupcake.id}}" title="Edit {{cupcake.flavor}}'s profile" class="species-icon fa-solid fa-shield-cat m-2 options-icons pt-2 pb-2" style="color: darkmagenta;"></i>                            
+                            <i class="bday-icon fa-solid fa-cake-candles m-2 options-icons pt-2 pb-2" style="color: #e029c8;"></i>
+                            <i title="Add a new cupcake" class="edit-icon fa-solid fa-circle-plus m-2 options-icons pt-2 pb-2" style="color: darkmagenta;"></i>
+                            <i id="{{cupcake.id}}" title="Delete cupcake" class="edit-icon fa-solid fa-circle-xmark m-2 options-icons pt-2 pb-2" style="color: #e029c8;"></i>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+            <div class="row justify-content-center ">
+                <a href="/cupcakes/{{cupcake.id}}" class=" btn btn-primary shadow  rounded mt-3">Go to {{cupcake.flavor}}'s profile!</a>
+            </div>
+
+        </div>
+        <span class="" id="pop_form"></span>
+    </div>
+
+</div>
+
+
+
+
+{% endfor %}
+
+{% endblock %}
+
+test
