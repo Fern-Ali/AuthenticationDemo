@@ -105,7 +105,7 @@ def login():
             session["username"] = user.username
             userdata = User.query.filter_by(id=id).all()
             username = userdata[0].username
-            flash(f"You have successfully logged in!", "success")   
+            flash(f"You have successfully logged in, {username}!", "success")   
             return redirect(f"/users/{username}")
         else:
             flash(f"Invalid credentials!", "error")
@@ -162,7 +162,7 @@ def add_feedback(username):
         db.session.add(new_feedback)
         db.session.commit()
 
-
+        flash(f"Feedback added!", "success")
         return redirect(f'/users/{username}')
     #db.session.commit()
     
