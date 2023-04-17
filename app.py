@@ -128,9 +128,9 @@ def delete_user(username):
         username = user[0].username
     
     
-    specified_user_delete = User.query.filter_by(id=id).delete()
+    specified_user_delete = User.query.filter_by(id=id).first()
 
-
+    db.session.delete(specified_user_delete)
     db.session.commit()
     session.pop("user_id")
     if "username" in session:
@@ -219,14 +219,14 @@ def delete_feedback(id):
         user = User.query.filter_by(id=user_id).all()
         username = user[0].username
         feedback = Feedback.query.filter_by(id=id).all()
-    
-    
-    specified_feedback_delete = Feedback.query.filter_by(id=id).delete()
+        
+    if feedback[0].username == username:
+        specified_feedback_delete = Feedback.query.filter_by(id=id).first()
 
-
-    db.session.commit()
+        db.session.delete(specified_feedback_delete)
+        db.session.commit()
     
-    flash(f"You successfully deleted your feedback, {username}!", "success")
+        flash(f"You successfully deleted your feedback, {username}!", "success")
 
 
     return redirect(f'/users/{username}')

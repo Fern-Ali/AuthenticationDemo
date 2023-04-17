@@ -43,13 +43,15 @@ image {
 }
 
 .messages .success {
-    background-color: rgba(0,255,0,0.4);
-    color: white;
+    background-color: rgba(0,255,0,0.5);
+    color: gray;
     /*border: 2.5px solid antiquewhite;*/
+    
+    outline-offset: 3px;
 }
 
 .messages .error {
-    background-color: rgba(255,0,0,0.4);
+    background-color: rgba(255,0,0,0.5);
     color: white;
 }
 

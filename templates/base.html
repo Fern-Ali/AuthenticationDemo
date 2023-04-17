@@ -18,7 +18,7 @@
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link" id="navlink1" href={% block navlink1 %}{%if "username" in session%}/users/{{username}}{% else %}Login{% endif %} {% endblock %}>{% block navlinktext1 %}{%if "user_id" in session%}Profile{% else %}Home{% endif %}{% endblock %} <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" id="navlink1" href={% block navlink1 %}{%if "username" in session%}/users/{{username}} {% else %}login{% endif %} {% endblock %}>{% block navlinktext1 %}{%if "user_id" in session%}Profile{% else %}Home{% endif %}{% endblock %} <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" id="navlink2" href={% block navlink2 %}/register{% endblock %}>{% block navlinktext2 %}Register{% endblock %}</a>

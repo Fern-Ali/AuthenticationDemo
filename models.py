@@ -72,7 +72,7 @@ class Feedback(db.Model):
                    primary_key=True,
                    autoincrement=True)
 
-    title = db.Column(db.String(20),
+    title = db.Column(db.String(50),
                          nullable=False,
                          unique=False)
 
@@ -81,3 +81,5 @@ class Feedback(db.Model):
     username = db.Column(db.String(20),
                          db.ForeignKey('users.username'),
                          nullable=False)
+
+    #user = db.relationship('User', backref="feedback", cascade="all,delete")

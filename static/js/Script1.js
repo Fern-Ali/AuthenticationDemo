@@ -7,7 +7,7 @@ document.body.style.backgroundSize = "cover";
 
 //})
 
-$('.fa-circle-xmark').click(delete_user)
+$('.fa-circle-xmark-user').click(delete_user)
 $('.fa-circle-xmark-feedback').click(delete_feedback)
 $('.fa-circle-plus').click(add_feedback)
 $('.feedback').click(see_feedback)
